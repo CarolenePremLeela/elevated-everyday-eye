@@ -14,7 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      projects: {
+        Row: {
+          achievements: string[]
+          created_at: string
+          description: string
+          featured: boolean
+          id: string
+          order_index: number
+          tags: string[]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          achievements?: string[]
+          created_at?: string
+          description: string
+          featured?: boolean
+          id?: string
+          order_index?: number
+          tags?: string[]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          achievements?: string[]
+          created_at?: string
+          description?: string
+          featured?: boolean
+          id?: string
+          order_index?: number
+          tags?: string[]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
