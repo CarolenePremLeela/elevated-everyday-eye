@@ -1,7 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
+import { downloadResume } from "@/lib/resumeDownload";
+import { toast } from "sonner";
 
 const Hero = () => {
+  const handleDownloadResume = async () => {
+    try {
+      await downloadResume();
+      toast.success("Resume downloaded successfully!");
+    } catch (error) {
+      toast.error("Failed to download resume. Please try again.");
+    }
+  };
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
@@ -46,6 +56,15 @@ const Hero = () => {
             </Button>
             <Button asChild variant="outline" size="lg">
               <a href="#projects">View Projects</a>
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={handleDownloadResume}
+              className="gap-2"
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
             </Button>
           </div>
 
