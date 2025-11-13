@@ -25,6 +25,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidAudience = "authenticated",
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes("f4S5XvcfxLCU+nBYf97xzoYKNuoq0L6JLE+Pa7hWB5X/4kEhiCWPpb5JTCnQJWDX9ZCzDrwXU1gADQpvHqYpfw==")
+            )
         };
         // Debug logging
         options.Events = new JwtBearerEvents

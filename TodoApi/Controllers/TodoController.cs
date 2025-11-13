@@ -21,15 +21,6 @@ namespace TodoApi.Controllers
         [HttpPost]
         public async Task<ActionResult<TodoItem>> Create(TodoItem item)
         {
-            var userIdString = User.FindFirst("sub")?.Value;
-
-            if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out var userId))
-            {
-                return BadRequest("Invalid user ID format");
-            }
-
-            item.UserId = userId;
-
             _context.TodoItems.Add(item);
             await _context.SaveChangesAsync();
 
