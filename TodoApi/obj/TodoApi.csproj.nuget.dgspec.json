@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Carolene Prem Leela\\Downloads\\api_using_c#\\TodoApi\\TodoApi.csproj": {}
+    "C:\\Users\\Carolene Prem Leela\\Desktop\\elevated-everyday-eye\\TodoApi\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Carolene Prem Leela\\Downloads\\api_using_c#\\TodoApi\\TodoApi.csproj": {
+    "C:\\Users\\Carolene Prem Leela\\Desktop\\elevated-everyday-eye\\TodoApi\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Carolene Prem Leela\\Downloads\\api_using_c#\\TodoApi\\TodoApi.csproj",
+        "projectUniqueName": "C:\\Users\\Carolene Prem Leela\\Desktop\\elevated-everyday-eye\\TodoApi\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Users\\Carolene Prem Leela\\Downloads\\api_using_c#\\TodoApi\\TodoApi.csproj",
+        "projectPath": "C:\\Users\\Carolene Prem Leela\\Desktop\\elevated-everyday-eye\\TodoApi\\TodoApi.csproj",
         "packagesPath": "C:\\Users\\Carolene Prem Leela\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Carolene Prem Leela\\Downloads\\api_using_c#\\TodoApi\\obj\\",
+        "outputPath": "C:\\Users\\Carolene Prem Leela\\Desktop\\elevated-everyday-eye\\TodoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Carolene Prem Leela\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -23,15 +23,12 @@ namespace TodoApi.Controllers
         {
             var userIdString = User.FindFirst("sub")?.Value;
 
-            try
-            {
-                var userId = Guid.Parse(userIdString);
-                item.UserId = userId;
-            }
-            catch
+            if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out var userId))
             {
                 return BadRequest("Invalid user ID format");
             }
+
+            item.UserId = userId;
 
             _context.TodoItems.Add(item);
             await _context.SaveChangesAsync();

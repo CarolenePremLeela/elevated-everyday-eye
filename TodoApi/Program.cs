@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TodoApi.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllers();
+var jwtSecret = builder.Configuration["Supabase:JwtSecret"]; // store in appsettings.json
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -19,9 +21,25 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         {
             ValidateIssuer = true,
             ValidIssuer = "https://vwbylpercpyrvyjmsnje.supabase.co/auth/v1",
-            ValidateAudience = false,
+            ValidateAudience = true,
+            ValidAudience = "authenticated",
             ValidateLifetime = true,
-            ValidateIssuerSigningKey = false
+            ValidateIssuerSigningKey = true,
+        };
+        // Debug logging
+        options.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                Console.WriteLine("Auth failed: " + context.Exception.Message);
+                return Task.CompletedTask;
+            },
+            OnTokenValidated = context =>
+            {
+                var name = context.Principal?.Identity?.Name ?? "<unknown>";
+                Console.WriteLine("Token validated for: " + name);
+                return Task.CompletedTask;
+            }
         };
     });
 
@@ -34,7 +52,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // Optional: disable HTTPS redirection if you're testing locally
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseRouting();
 
