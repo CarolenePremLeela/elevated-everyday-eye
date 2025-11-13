@@ -71,3 +71,9 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+
+
+# PostMan API Link
+
+https://web.postman.co/workspace/My-Workspace~5ac701f3-968c-449b-8dd0-eb664aa8504a/collection/16301920-98cdb2b8-c744-46c5-af8b-8016e75f45c3?action=share&source=copy-link&creator=16301920
