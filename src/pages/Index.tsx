@@ -6,6 +6,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
+import TodoList from "@/components/TodoList";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <Skills />
       <Projects />
       <Education />
+      <TodoList />
       <Contact />
       
       <footer className="py-8 text-center border-t border-border">
