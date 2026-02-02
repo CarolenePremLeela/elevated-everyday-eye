@@ -4,7 +4,21 @@ import { Badge } from "@/components/ui/badge";
 const Experience = () => {
   const experiences = [
     {
-      company: "Tuckermotors Private Limited",
+      company: "Nrolled Inc, Toronto, Canada",
+      period: "November 2025 - Present",
+      role: "Senior Software Engineer",
+      achievements: [
+        "Headed end-to-end delivery of Nrolled’s platforms from MVP1 to MVP2, owning architecture, execution, and rollout",
+        "Led design and implementation of workforce setup, vacancy planning, invite, enrollment, and favorites workflows across Staffing models",
+        "Drove platform build using Lovable and Supabase, integrating backend services, automation, and data workflows",
+        "Implemented cron-based orchestration and event-driven job creation to ensure accurate, scalable workforce operations",
+        "Led INT → PROD migration, resolving data integrity, sequencing, and stability issues for production readiness",
+        "Defined and refined AI prompts to automate setup, validation, and operational workflows",
+      ],
+      tags: ["Java","C#","Supabase","Lovable","MongoDB","REST APIs","Cron Jobs","Prompt Engineering","Event-Driven Architecture"]
+    },
+    {
+      company: "Tuckermotors Private Limited, Madurai, Tamilnadu",
       period: "February 2020 - May 2024",
       role: "Senior Full-Stack Developer & Team Lead",
       achievements: [
@@ -17,7 +31,7 @@ const Experience = () => {
       tags: ["PHP", "Java", "Android", "Flutter", "AWS", "OCPP", "REST APIs"]
     },
     {
-      company: "Firstcall Automation Private Limited",
+      company: "Firstcall Automation Private Limited, Madurai, Tamilnadu",
       period: "July 2018 - February 2020",
       role: "Embedded & Full-Stack Engineer",
       achievements: [
