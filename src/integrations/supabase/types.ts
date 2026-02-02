@@ -74,6 +74,27 @@ export type Database = {
         }
         Relationships: []
       }
+      todo_items: {
+        Row: {
+          created_at: string
+          id: number
+          is_complete: boolean
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          is_complete?: boolean
+          title: string
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          is_complete?: boolean
+          title?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
