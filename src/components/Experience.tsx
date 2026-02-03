@@ -15,7 +15,7 @@ const Experience = () => {
         "Led INT → PROD migration, resolving data integrity, sequencing, and stability issues for production readiness",
         "Defined and refined AI prompts to automate setup, validation, and operational workflows",
       ],
-      tags: ["Java","C#","Supabase","Lovable","MongoDB","REST APIs","Cron Jobs","Prompt Engineering","Event-Driven Architecture"]
+      tags: ["Java","C#","Supabase","Lovable AI","MongoDB","AWS(EC2, S3, SES)","REST APIs","React Native", "TypeScript", "Payment Gateway", "Firebase","Cron Jobs","Prompt Engineering","Event-Driven Architecture"]
     },
     {
       company: "Tuckermotors Private Limited, Madurai, Tamilnadu",
