@@ -1,5 +1,3 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
@@ -14,76 +12,40 @@ interface TodoItem {
   is_complete: boolean;
 }
 
+const initialTodos: TodoItem[] = [
+  { id: 1, title: "Learn React", is_complete: true },
+  { id: 2, title: "Build a portfolio", is_complete: false },
+  { id: 3, title: "Deploy to production", is_complete: false },
+];
+
 const TodoList = () => {
+  const [todos, setTodos] = useState<TodoItem[]>(initialTodos);
   const [newTodo, setNewTodo] = useState("");
   const { toast } = useToast();
-  const queryClient = useQueryClient();
-
-  const { data: todos, isLoading } = useQuery({
-    queryKey: ["todos"],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("todo_items")
-        .select("*")
-        .order("id", { ascending: true });
-      
-      if (error) throw error;
-      return data as TodoItem[];
-    },
-  });
-
-  const addTodoMutation = useMutation({
-    mutationFn: async (title: string) => {
-      const { error } = await supabase
-        .from("todo_items")
-        .insert({ title, is_complete: false });
-      
-      if (error) throw error;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["todos"] });
-      setNewTodo("");
-      toast({ title: "Todo added successfully" });
-    },
-    onError: () => {
-      toast({ title: "Failed to add todo", variant: "destructive" });
-    },
-  });
-
-  const toggleTodoMutation = useMutation({
-    mutationFn: async ({ id, is_complete }: { id: number; is_complete: boolean }) => {
-      const { error } = await supabase
-        .from("todo_items")
-        .update({ is_complete: !is_complete })
-        .eq("id", id);
-      
-      if (error) throw error;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["todos"] });
-    },
-  });
-
-  const deleteTodoMutation = useMutation({
-    mutationFn: async (id: number) => {
-      const { error } = await supabase
-        .from("todo_items")
-        .delete()
-        .eq("id", id);
-      
-      if (error) throw error;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["todos"] });
-      toast({ title: "Todo deleted successfully" });
-    },
-  });
 
   const handleAddTodo = (e: React.FormEvent) => {
     e.preventDefault();
     if (newTodo.trim()) {
-      addTodoMutation.mutate(newTodo);
+      const newItem: TodoItem = {
+        id: Date.now(),
+        title: newTodo,
+        is_complete: false,
+      };
+      setTodos([...todos, newItem]);
+      setNewTodo("");
+      toast({ title: "Todo added successfully" });
     }
+  };
+
+  const handleToggle = (id: number) => {
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, is_complete: !todo.is_complete } : todo
+    ));
+  };
+
+  const handleDelete = (id: number) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+    toast({ title: "Todo deleted successfully" });
   };
 
   return (
@@ -106,15 +68,13 @@ const TodoList = () => {
                 placeholder="Add a new todo..."
                 className="flex-1"
               />
-              <Button type="submit" disabled={addTodoMutation.isPending}>
+              <Button type="submit">
                 <Plus className="w-4 h-4 mr-2" />
                 Add
               </Button>
             </form>
 
-            {isLoading ? (
-              <p className="text-center text-muted-foreground py-8">Loading todos...</p>
-            ) : todos && todos.length > 0 ? (
+            {todos.length > 0 ? (
               <div className="space-y-2">
                 {todos.map((todo) => (
                   <div
@@ -123,12 +83,7 @@ const TodoList = () => {
                   >
                     <Checkbox
                       checked={todo.is_complete}
-                      onCheckedChange={() =>
-                        toggleTodoMutation.mutate({
-                          id: todo.id,
-                          is_complete: todo.is_complete,
-                        })
-                      }
+                      onCheckedChange={() => handleToggle(todo.id)}
                     />
                     <span
                       className={`flex-1 ${
@@ -142,7 +97,7 @@ const TodoList = () => {
                     <Button
                       variant="ghost"
                       size="icon"
-                      onClick={() => deleteTodoMutation.mutate(todo.id)}
+                      onClick={() => handleDelete(todo.id)}
                     >
                       <Trash2 className="w-4 h-4" />
                     </Button>
