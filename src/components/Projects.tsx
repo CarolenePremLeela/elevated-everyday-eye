@@ -1,43 +1,46 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
-import { Loader2 } from "lucide-react";
+
+const projects = [
+  {
+    id: "1",
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce solution with payment integration and inventory management.",
+    achievements: [
+      "Implemented secure payment gateway integration",
+      "Built real-time inventory tracking system",
+      "Achieved 99.9% uptime with optimized architecture"
+    ],
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    featured: true
+  },
+  {
+    id: "2",
+    title: "Task Management System",
+    description: "Collaborative project management tool with real-time updates and team features.",
+    achievements: [
+      "Designed intuitive drag-and-drop interface",
+      "Implemented real-time collaboration features",
+      "Reduced team coordination time by 40%"
+    ],
+    tags: ["TypeScript", "React", "WebSocket", "PostgreSQL"],
+    featured: false
+  },
+  {
+    id: "3",
+    title: "Analytics Dashboard",
+    description: "Data visualization platform for business intelligence and reporting.",
+    achievements: [
+      "Created interactive charts and graphs",
+      "Built automated report generation system",
+      "Integrated multiple data sources seamlessly"
+    ],
+    tags: ["React", "D3.js", "Python", "REST APIs"],
+    featured: false
+  }
+];
 
 const Projects = () => {
-  const { data: projects, isLoading, error } = useQuery({
-    queryKey: ['projects'],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from('projects')
-        .select('*')
-        .order('order_index', { ascending: true });
-      
-      if (error) throw error;
-      return data;
-    },
-  });
-
-  if (isLoading) {
-    return (
-      <section id="projects" className="py-20 px-4 bg-card/30">
-        <div className="container mx-auto max-w-6xl flex items-center justify-center min-h-[400px]">
-          <Loader2 className="w-8 h-8 animate-spin text-primary" />
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="projects" className="py-20 px-4 bg-card/30">
-        <div className="container mx-auto max-w-6xl">
-          <p className="text-center text-destructive">Failed to load projects</p>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="projects" className="py-20 px-4 bg-card/30">
       <div className="container mx-auto max-w-6xl">
@@ -45,7 +48,7 @@ const Projects = () => {
         <div className="w-24 h-1 bg-primary mx-auto mb-12 rounded-full" />
 
         <div className="grid md:grid-cols-2 gap-6">
-          {projects?.map((project) => (
+          {projects.map((project) => (
             <Card 
               key={project.id}
               className={`p-6 bg-card hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-1 ${
