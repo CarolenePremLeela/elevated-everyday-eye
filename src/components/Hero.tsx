@@ -26,7 +26,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Carolene Prem Leela
+            Carolene Prem Leela Raja Singh
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-4">
