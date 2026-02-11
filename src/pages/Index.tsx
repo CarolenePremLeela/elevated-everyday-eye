@@ -21,7 +21,7 @@ const Index = () => {
       
       <footer className="py-8 text-center border-t border-border">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Carolene Prem Leela. All rights reserved.
+          © {new Date().getFullYear()} Carolene Prem Leela Raja Singh. All rights reserved.
         </p>
       </footer>
     </div>
