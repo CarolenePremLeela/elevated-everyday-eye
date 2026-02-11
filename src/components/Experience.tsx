@@ -31,6 +31,16 @@ const Experience = () => {
       tags: ["PHP", "Java", "Android", "Flutter", "AWS", "OCPP", "REST APIs"]
     },
     {
+      company: "Career Break",
+      period: "May 2024 — November 2025",
+      role: "Maternity and Paternity Leave",
+      achievements: [
+        "Took time for family leave",
+        "Continued self-directed learning in UX design and software engineering"
+      ],
+      tags: []
+    },
+    {
       company: "Firstcall Automation Private Limited, Madurai, Tamilnadu",
       period: "July 2018 - February 2020",
       role: "Embedded & Full-Stack Engineer",
