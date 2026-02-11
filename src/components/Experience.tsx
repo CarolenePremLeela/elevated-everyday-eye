@@ -32,11 +32,11 @@ const Experience = () => {
     },
     {
       company: "Career Break",
-      period: "May 2024 — November 2025",
+      period: "May 2024 - November 2025",
       role: "Maternity and Paternity Leave",
       achievements: [
-        "Took time for family leave",
-        "Continued self-directed learning in UX design and software engineering"
+        "Took time for my toddlers growth and time well spent",
+        "Continued self-directed learning in software engineering and prepared for new technologies and opportunities"
       ],
       tags: []
     },
