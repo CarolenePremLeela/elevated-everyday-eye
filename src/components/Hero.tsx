@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import { downloadResume } from "@/lib/resumeDownload";
 import { toast } from "sonner";
+import profilePhoto from "@/assets/Carolene_profile.jpg";
 
 const Hero = () => {
   const handleDownloadResume = async () => {
@@ -25,6 +26,11 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
+          <img
+            src={profilePhoto}
+            alt="Carolene Prem Leela – Full Stack Developer"
+            className="w-30 h-30 md:w-40 md:h-40 rounded-full object-cover mx-auto mb-6 shadow-[0_0_30px_hsl(var(--primary)/0.3)] border-2 border-primary/30"
+          />
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             Carolene Prem Leela Raja Singh
           </h1>
