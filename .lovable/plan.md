@@ -1,36 +1,20 @@
+# Experience Section Update
 
-# Portfolio Enhancement Plan
+## Issue Found
 
-## Changes Overview
+The experience entries are not in correct reverse-chronological order. The "Career Break" (May 2024 - Nov 2025) is listed **after** Tuckermotors (Feb 2020 - May 2024), when it should come **before** it.
 
-Two main updates: add the "Nrolled" project card and add your profile picture to the Hero section.
+## Planned Change
 
----
+**File:** `src/components/Experience.tsx`
 
-## 1. Add Profile Picture to Hero Section
+Reorder the `experiences` array to proper reverse-chronological order:
 
-- Copy the uploaded image (`Carolene_profile.jpg`) to `src/assets/Carolene_profile.jpg`
-- Update `Hero.tsx` to display a circular profile photo above your name
-- Styling: circular frame, subtle glow/shadow (`shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]`), ~160px on desktop / ~120px on mobile
-- Responsive: centered above the name on all screen sizes
-- Alt text: "Carolene Prem Leela -- Full Stack Developer"
+1. **Nrolled Inc** -- November 2025 - Present
+2. **Career Break** -- May 2024 - November 2025
+3. **Tuckermotors** -- February 2020 - May 2024
+4. **Firstcall Automation** -- July 2018 - February 2020
 
-## 2. Add "Nrolled" Project to Projects Section
+No content changes -- just swapping the position of the Career Break and Tuckermotors entries so the timeline reads correctly from most recent to oldest.
 
-- Add a new project object at the **top** of the `projects` array in `Projects.tsx`
-- Mark it as `featured: true` so it spans full width
-- Include all provided details (description, 6 bullet points, 7 tech tags)
-- No changes to existing project cards or styling
-
----
-
-## Technical Details
-
-**Files modified:**
-1. `src/components/Hero.tsx` -- Import profile image, add `<img>` element above the `<h1>`
-2. `src/components/Projects.tsx` -- Prepend new Nrolled project object to the array
-
-**New file copied:**
-- `src/assets/Carolene_profile.jpg` (from uploaded image)
-
-No dependencies added. No backend changes needed.
+Change total experience from6+ to 8
