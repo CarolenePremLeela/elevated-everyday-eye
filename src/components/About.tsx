@@ -5,7 +5,7 @@ const About = () => {
   const highlights = [
     {
       icon: Code2,
-      title: "6+ Years Experience",
+      title: "8 Years Experience",
       description: "Full-stack development and embedded systems"
     },
     {
