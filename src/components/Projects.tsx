@@ -4,6 +4,21 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    id: "0",
+    title: "Nrolled – Workforce & Job Management Platform",
+    description: "Architected and developed a role-based workforce and job management platform enabling structured job assignments, notifications, and access control across multiple organizations.",
+    achievements: [
+      "Designed normalized relational database schema with proper 1:1 and N:N mappings",
+      "Implemented Role-Based Access Control (RBAC) for Admin, Company, Division, Customer, and Worker roles",
+      "Built job creation workflow separating workforce assignments from job records",
+      "Integrated secure Supabase RLS policies for data isolation",
+      "Developed real-time notifications and invite-based job assignment system",
+      "Optimized enum validation logic and resolved role enforcement trigger issues"
+    ],
+    tags: ["React", "TypeScript", "Supabase", "PostgreSQL", "RLS", "Edge Functions", "RBAC"],
+    featured: true
+  },
+  {
     id: "1",
     title: "Scalable EV Charging Network CMS & Mobile Platform",
     description: "Led the end-to-end architecture and development of a central management system and Android application for a network of smart EV charging stations.",
