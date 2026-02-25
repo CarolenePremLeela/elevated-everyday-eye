@@ -18,6 +18,16 @@ const Experience = () => {
       tags: ["Java","C#","Supabase","Lovable AI","MongoDB","AWS(EC2, S3, SES)","REST APIs","React Native", "TypeScript", "Payment Gateway", "Firebase","Cron Jobs","Prompt Engineering","Event-Driven Architecture"]
     },
     {
+      company: "Career Break",
+      period: "May 2024 - November 2025",
+      role: "Maternity and Paternity Leave",
+      achievements: [
+        "Took time for my toddlers growth and time well spent",
+        "Continued self-directed learning in software engineering and prepared for new technologies and opportunities"
+      ],
+      tags: []
+    },
+    {
       company: "Tuckermotors Private Limited, Madurai, Tamilnadu",
       period: "February 2020 - May 2024",
       role: "Senior Full-Stack Developer & Team Lead",
@@ -29,16 +39,6 @@ const Experience = () => {
         "Developed cross-platform Flutter apps and Android applications with 15K+ downloads"
       ],
       tags: ["PHP", "Java", "Android", "Flutter", "AWS", "OCPP", "REST APIs"]
-    },
-    {
-      company: "Career Break",
-      period: "May 2024 - November 2025",
-      role: "Maternity and Paternity Leave",
-      achievements: [
-        "Took time for my toddlers growth and time well spent",
-        "Continued self-directed learning in software engineering and prepared for new technologies and opportunities"
-      ],
-      tags: []
     },
     {
       company: "Firstcall Automation Private Limited, Madurai, Tamilnadu",

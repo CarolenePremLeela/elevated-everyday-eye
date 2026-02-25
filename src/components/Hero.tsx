@@ -40,7 +40,7 @@ const Hero = () => {
           </p>
           
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            6+ years of experience building scalable web applications, mobile apps, and EV charging solutions. 
+            8 years of experience building scalable web applications, mobile apps, and EV charging solutions. 
             Specialized in Java, PHP, Python, and cloud architecture.
           </p>
 
