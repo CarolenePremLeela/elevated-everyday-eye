@@ -5,6 +5,7 @@ import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
+import Languages from "@/components/Languages";
 import Contact from "@/components/Contact";
 
 const Index = () => {
