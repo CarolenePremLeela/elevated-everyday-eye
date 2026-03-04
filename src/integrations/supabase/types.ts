@@ -50,51 +50,6 @@ export type Database = {
         }
         Relationships: []
       }
-      resume_downloads: {
-        Row: {
-          downloaded_at: string
-          id: string
-          ip_address: string | null
-          user_agent: string | null
-          visitor_id: string
-        }
-        Insert: {
-          downloaded_at?: string
-          id?: string
-          ip_address?: string | null
-          user_agent?: string | null
-          visitor_id: string
-        }
-        Update: {
-          downloaded_at?: string
-          id?: string
-          ip_address?: string | null
-          user_agent?: string | null
-          visitor_id?: string
-        }
-        Relationships: []
-      }
-      todo_items: {
-        Row: {
-          created_at: string
-          id: number
-          is_complete: boolean
-          title: string
-        }
-        Insert: {
-          created_at?: string
-          id?: number
-          is_complete?: boolean
-          title: string
-        }
-        Update: {
-          created_at?: string
-          id?: number
-          is_complete?: boolean
-          title?: string
-        }
-        Relationships: []
-      }
     }
     Views: {
       [_ in never]: never
