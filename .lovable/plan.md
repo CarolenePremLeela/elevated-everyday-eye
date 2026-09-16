@@ -1,20 +1,27 @@
-# Experience Section Update
+# Experience Update: Nrolled Promotion + AI Development Focus
 
-## Issue Found
+## Change
 
-The experience entries are not in correct reverse-chronological order. The "Career Break" (May 2024 - Nov 2025) is listed **after** Tuckermotors (Feb 2020 - May 2024), when it should come **before** it.
-
-## Planned Change
+Update the Nrolled Inc entry in the Experience section to reflect the promotion and AI-driven way of working.
 
 **File:** `src/components/Experience.tsx`
 
-Reorder the `experiences` array to proper reverse-chronological order:
+Replace the single Nrolled entry with two entries in reverse-chronological order (at the top of the timeline):
 
-1. **Nrolled Inc** -- November 2025 - Present
-2. **Career Break** -- May 2024 - November 2025
-3. **Tuckermotors** -- February 2020 - May 2024
-4. **Firstcall Automation** -- July 2018 - February 2020
+1. **Nrolled Inc, Toronto, Canada** -- May 2026 - Present
+   - Role: **Technical Team Lead**
+   - Keep the existing achievements, add new ones covering AI-driven development:
+     - Lead the technical team, driving architecture, code quality, and delivery across Nrolled's platforms
+     - Extensively use AI products (AI coding assistants and agentic tools) to accelerate development cycles and reduce delivery time
+     - Introduce AI-powered automated testing workflows to improve coverage and catch regressions early
 
-No content changes -- just swapping the position of the Career Break and Tuckermotors entries so the timeline reads correctly from most recent to oldest.
+2. **Nrolled Inc, Toronto, Canada** -- November 2025 - April 2026
+   - Role: **Senior Software Engineer**
+   - Keep the existing achievements (MVP1 to MVP2 delivery, workforce workflows, Lovable/Supabase build, cron orchestration, INT to PROD migration, AI prompts), updated to reflect the AI tools usage already mentioned
 
-Change total experience from6+ to 8
+Order in the array: Nrolled (Technical Team Lead) first, Nrolled (Senior Software Engineer) second, then Career Break, Tuckermotors, Firstcall Automation -- preserving the existing reverse-chronological timeline.
+
+## No other changes
+
+- About/Hero "8 years" stays the same (Nov 2025 onward is within the same period already counted).
+- No changes to other sections, styling, or layout.
