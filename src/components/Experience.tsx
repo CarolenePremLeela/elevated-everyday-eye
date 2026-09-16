@@ -5,7 +5,20 @@ const Experience = () => {
   const experiences = [
     {
       company: "Nrolled Inc, Toronto, Canada",
-      period: "November 2025 - Present",
+      period: "May 2026 - Present",
+      role: "Technical Team Lead",
+      achievements: [
+        "Promoted to Technical Team Lead within 6 months, leading the engineering team across architecture, code quality, and delivery",
+        "Drive extensive adoption of AI products — AI coding assistants and agentic tools — to accelerate development cycles and shorten delivery time",
+        "Introduced AI-powered automated testing workflows, improving coverage and catching regressions early",
+        "Own technical direction for workforce setup, vacancy planning, invite, enrollment, and favorites workflows across Staffing models",
+        "Define and refine AI prompts to automate setup, validation, and operational workflows",
+      ],
+      tags: ["Team Leadership","AI-Assisted Development","Automated Testing","Java","C#","Supabase","Lovable AI","MongoDB","AWS(EC2, S3)","REST APIs","React Native", "TypeScript", "Payment Gateway", "Firebase","Cron Jobs","Prompt Engineering","Event-Driven Architecture"]
+    },
+    {
+      company: "Nrolled Inc, Toronto, Canada",
+      period: "November 2025 - April 2026",
       role: "Senior Software Engineer",
       achievements: [
         "Headed end-to-end delivery of Nrolled’s platforms from MVP1 to MVP2, owning architecture, execution, and rollout",
