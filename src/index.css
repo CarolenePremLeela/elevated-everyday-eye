@@ -2,48 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 220 26% 14%;
-    --foreground: 210 40% 98%;
-
-    --card: 220 23% 18%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 220 23% 18%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 189 94% 43%;
-    --primary-foreground: 220 26% 14%;
-
-    --secondary: 220 20% 25%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 220 17% 32%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 189 94% 43%;
-    --accent-foreground: 220 26% 14%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 17% 28%;
-    --input: 220 17% 28%;
-    --ring: 189 94% 43%;
-
-    --radius: 0.75rem;
-
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(189 94% 43%), hsl(189 94% 53%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 26% 14%), hsl(220 23% 18%));
-    --shadow-glow: 0 0 40px hsl(189 94% 43% / 0.15);
-    --shadow-card: 0 4px 20px hsl(220 26% 8% / 0.3);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --background: 43 62% 97%;
+    --foreground: 0 0% 17%;
+    --card: 40 60% 99%;
+    --card-foreground: 0 0% 17%;
+    --popover: 40 60% 99%;
+    --popover-foreground: 0 0% 17%;
+    --primary: 180 32% 27%;
+    --primary-foreground: 43 62% 97%;
+    --secondary: 32 21% 89%;
+    --secondary-foreground: 0 0% 17%;
+    --muted: 35 24% 92%;
+    --muted-foreground: 27 10% 37%;
+    --accent: 0 41% 39%;
+    --accent-foreground: 43 62% 97%;
+    --destructive: 0 58% 43%;
+    --destructive-foreground: 43 62% 97%;
+    --border: 32 18% 81%;
+    --input: 32 18% 81%;
+    --ring: 180 32% 27%;
+    --burgundy: 0 41% 39%;
+    --gold: 38 39% 60%;
+    --paper: 40 60% 99%;
+    --radius: 0.25rem;
+    --shadow-card: 0 18px 50px hsl(27 10% 20% / 0.08);
   }
 }
 
@@ -53,12 +37,22 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
+    background-image: linear-gradient(hsl(var(--foreground) / 0.025) 1px, transparent 1px);
+    background-size: 100% 32px;
   }
 
-  /* Smooth scroll */
   html {
     scroll-behavior: smooth;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    color: hsl(var(--primary-foreground));
+    background: hsl(var(--primary));
   }
 
   /* Custom scrollbar */
@@ -72,20 +66,18 @@ All colors MUST be HSL.
 
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--primary) / 0.5);
-    border-radius: 5px;
+    border-radius: 0;
   }
 
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary));
   }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
