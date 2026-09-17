@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
 
 const projects = [
   {
@@ -82,22 +83,20 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-4 bg-card/30">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Featured Projects</h2>
-        <div className="w-24 h-1 bg-primary mx-auto mb-12 rounded-full" />
+    <section id="projects" className="scroll-mt-16 border-y border-border bg-card/55 px-6 py-24 md:py-32">
+      <div className="container mx-auto max-w-7xl">
+        <SectionHeading number="04" title="Selected Work" note="Case studies in platforms, charging infrastructure, industrial systems, and APIs." />
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project) => (
+        <div className="divide-y divide-border border-y border-border">
+          {projects.map((project, index) => (
             <Card 
               key={project.id}
-              className={`p-6 bg-card hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-1 ${
-                project.featured ? 'md:col-span-2' : ''
-              }`}
+              className="grid gap-6 border-0 bg-transparent py-10 shadow-none md:grid-cols-[80px_1fr_1.2fr] md:gap-10 md:py-14"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <h3 className="text-xl font-bold text-primary">{project.title}</h3>
+              <span className="font-display text-4xl text-gold">{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <div className="flex items-start gap-3">
+                  <h3 className="font-display text-3xl leading-tight text-primary">{project.title}</h3>
                   {project.link && (
                     <a 
                       href={project.link} 
@@ -109,7 +108,7 @@ const Projects = () => {
                     </a>
                   )}
                 </div>
-                <div className="flex gap-2">
+                <div className="mt-4 flex flex-wrap gap-2">
                   {project.isPersonal && (
                     <Badge variant="outline">Personal Project</Badge>
                   )}
@@ -119,12 +118,13 @@ const Projects = () => {
                 </div>
               </div>
 
-              <p className="text-muted-foreground mb-4">{project.description}</p>
+              <p className="mt-5 leading-7 text-muted-foreground">{project.description}</p>
+              </div>
 
-              <ul className="space-y-2 mb-6">
+              <div><ul className="mb-6 space-y-3">
                 {project.achievements.map((achievement, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="text-primary mt-1">▹</span>
+                    <span className="mt-1 text-burgundy">—</span>
                     <span>{achievement}</span>
                   </li>
                 ))}
@@ -136,7 +136,7 @@ const Projects = () => {
                     {tag}
                   </Badge>
                 ))}
-              </div>
+              </div></div>
             </Card>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
 
 const Contact = () => {
   const contactInfo = [
@@ -38,24 +39,23 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 bg-card/30">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Get In Touch</h2>
-        <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full" />
+    <section id="contact" className="scroll-mt-16 px-6 py-24 md:py-32">
+      <div className="container mx-auto max-w-7xl">
+        <SectionHeading number="07" title="Contact" note="Open to technical leadership, product engineering, and meaningful collaborations." />
         
-        <p className="text-center text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+         <p className="mb-12 max-w-2xl font-display text-3xl leading-snug text-foreground md:text-4xl">
           I'm always open to discussing new opportunities, interesting projects, or potential collaborations. 
           Feel free to reach out!
         </p>
 
-        <Card className="p-8 bg-card mb-8">
+         <Card className="mb-10 border-x-0 bg-transparent p-0 shadow-none">
           <div className="grid md:grid-cols-3 gap-6">
             {contactInfo.map((info, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
-                <div className="p-3 rounded-full bg-primary/20 mb-3">
+               <div key={index} className="flex items-start gap-4 border-b border-border py-6 md:border-b-0 md:border-r md:px-6 md:first:pl-0 md:last:border-r-0">
+                 <div className="border border-border p-3">
                   <info.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-1">{info.label}</h3>
+                 <div><h3 className="mb-1 font-mono text-[10px] uppercase text-burgundy">{info.label}</h3>
                 {info.href ? (
                   <a 
                     href={info.href}
@@ -65,13 +65,13 @@ const Contact = () => {
                   </a>
                 ) : (
                   <p className="text-sm text-muted-foreground">{info.value}</p>
-                )}
+                 )}</div>
               </div>
             ))}
           </div>
         </Card>
 
-        <div className="flex flex-col items-center gap-6">
+         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div className="flex items-center gap-4">
             {socialLinks.map((social, index) => (
               <Button 

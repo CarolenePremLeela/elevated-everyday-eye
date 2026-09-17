@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import SectionHeading from "@/components/SectionHeading";
 
 const Experience = () => {
   const experiences = [
@@ -69,31 +70,32 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 bg-card/30">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Experience</h2>
-        <div className="w-24 h-1 bg-primary mx-auto mb-12 rounded-full" />
+    <section id="experience" className="scroll-mt-16 border-y border-border bg-card/55 px-6 py-24 md:py-32">
+      <div className="container mx-auto max-w-7xl">
+        <SectionHeading number="02" title="Experience" note="A career chronology from embedded engineering to technical leadership." />
 
-        <div className="space-y-8">
+        <div className="relative space-y-0 before:absolute before:bottom-0 before:left-[7px] before:top-0 before:w-px before:bg-border md:before:left-[180px]">
           {experiences.map((exp, index) => (
-            <Card 
+            <Card
               key={index}
-              className="p-8 bg-card hover:shadow-[var(--shadow-glow)] transition-all duration-300"
+              className="relative ml-7 grid border-x-0 border-t-0 bg-transparent p-0 py-10 shadow-none last:border-b-0 md:ml-0 md:grid-cols-[180px_1fr] md:gap-12"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <span className="absolute -left-[27px] top-12 h-3.5 w-3.5 rounded-full border-2 border-background bg-primary md:left-[174px]" />
+              <div className="mb-4 md:mb-0">
+                <Badge variant="outline" className="border-0 p-0 text-burgundy">{exp.period}</Badge>
+              </div>
+              <div>
+              <div className="mb-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-primary mb-2">{exp.role}</h3>
-                  <p className="text-xl font-semibold mb-1">{exp.company}</p>
+                  <h3 className="font-display text-3xl text-primary md:text-4xl">{exp.role}</h3>
+                  <p className="mt-2 text-sm font-semibold uppercase text-foreground">{exp.company}</p>
                 </div>
-                <Badge variant="outline" className="w-fit text-sm">
-                  {exp.period}
-                </Badge>
               </div>
 
               <ul className="space-y-2 mb-6">
                 {exp.achievements.map((achievement, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-muted-foreground">
-                    <span className="text-primary mt-1">▹</span>
+                    <span className="mt-1 text-gold">—</span>
                     <span>{achievement}</span>
                   </li>
                 ))}
@@ -105,6 +107,7 @@ const Experience = () => {
                     {tag}
                   </Badge>
                 ))}
+              </div>
               </div>
             </Card>
           ))}
