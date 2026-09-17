@@ -1,38 +1,36 @@
-import { Card } from "@/components/ui/card";
-import { Code2, Rocket, Users, Award } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
 
 const About = () => {
   const highlights = [
     {
-      icon: Code2,
-      title: "8 Years Experience",
+      value: "8",
+      title: "Years Experience",
       description: "Full-stack development and embedded systems"
     },
     {
-      icon: Users,
-      title: "25+ Engineers Led",
+      value: "25+",
+      title: "Engineers Led",
       description: "Team leadership and project management"
     },
     {
-      icon: Rocket,
-      title: "75+ Projects",
+      value: "75+",
+      title: "Projects",
       description: "Delivered across various domains"
     },
     {
-      icon: Award,
-      title: "Best Engineer 2024",
+      value: "2024",
+      title: "Best Engineer",
       description: "Recognized for exceptional contribution"
     }
   ];
 
   return (
-    <section id="about" className="py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">About Me</h2>
-        <div className="w-24 h-1 bg-primary mx-auto mb-12 rounded-full" />
+    <section id="about" className="scroll-mt-16 px-6 py-24 md:py-32">
+      <div className="container mx-auto max-w-7xl">
+        <SectionHeading number="01" title="About" note="Engineer, team lead, and careful builder of systems that need to last." />
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="space-y-6">
+        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="max-w-2xl space-y-6">
             <p className="text-lg text-muted-foreground">
               I'm a passionate Full Stack Developer with extensive experience in building scalable 
               applications and embedded systems. My expertise spans across EV charging infrastructure, 
@@ -50,16 +48,16 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 border-l border-t border-border">
             {highlights.map((item, index) => (
-              <Card 
+              <div
                 key={index}
-                className="p-6 bg-card hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-1"
+                className="border-b border-r border-border p-5 md:p-7"
               >
-                <item.icon className="w-8 h-8 text-primary mb-3" />
-                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </Card>
+                <span className="font-display text-4xl text-burgundy md:text-5xl">{item.value}</span>
+                <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
+                <p className="mt-1 text-xs leading-5 text-muted-foreground">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>

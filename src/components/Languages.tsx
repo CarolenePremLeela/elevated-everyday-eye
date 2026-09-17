@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import SectionHeading from "@/components/SectionHeading";
 
 const Languages = () => {
   const languages = [
@@ -8,21 +8,20 @@ const Languages = () => {
   ];
 
   return (
-    <section id="languages" className="py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Communication Languages</h2>
-        <div className="w-24 h-1 bg-primary mx-auto mb-12 rounded-full" />
+    <section id="languages" className="border-y border-border bg-card/55 px-6 py-24 md:py-28">
+      <div className="container mx-auto max-w-7xl">
+        <SectionHeading number="06" title="Languages" note="Communication across teams, communities, and contexts." />
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="grid border-l border-t border-border md:grid-cols-3">
           {languages.map((lang, index) => (
-            <Card
+            <article
               key={index}
-              className="p-6 bg-card hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-1 min-w-[200px] text-center"
+              className="border-b border-r border-border p-8 text-center"
             >
-              <span className="text-3xl font-bold text-primary block mb-3">{lang.native}</span>
+              <span className="mb-3 block font-display text-4xl text-primary">{lang.native}</span>
               <h3 className="font-semibold text-lg">{lang.name}</h3>
               <p className="text-sm text-muted-foreground">{lang.level}</p>
-            </Card>
+            </article>
           ))}
         </div>
       </div>
