@@ -116,9 +116,7 @@ const Projects = () => {
                     <Badge variant="default">Featured</Badge>
                   )}
                 </div>
-              </div>
-
-              <p className="mt-5 leading-7 text-muted-foreground">{project.description}</p>
+                <p className="mt-5 leading-7 text-muted-foreground">{project.description}</p>
               </div>
 
               <div><ul className="mb-6 space-y-3">
