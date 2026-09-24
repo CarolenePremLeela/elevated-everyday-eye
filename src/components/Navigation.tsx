@@ -40,7 +40,7 @@ const Navigation = () => {
             href="#" 
             className="font-display text-2xl text-foreground transition-colors hover:text-primary"
           >
-             C. Prem Leela
+             Carolene Raja Singh
           </a>
 
            <div className="hidden items-center gap-7 md:flex">

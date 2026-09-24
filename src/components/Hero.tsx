@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import { downloadResume } from "@/lib/resumeDownload";
 import { toast } from "sonner";
-import portraitAsset from "@/assets/carolene-portrait.png.asset.json";
+import portraitImage from "@/assets/carolene-portrait.jpg";
 
 const Hero = () => {
   const handleDownloadResume = async () => {
@@ -19,7 +19,7 @@ const Hero = () => {
         <div className="relative mx-auto w-full max-w-[440px] animate-fade-in lg:order-1">
           <div className="absolute -left-3 -top-3 h-24 w-24 border-l border-t border-gold" />
           <figure className="relative border border-border bg-paper p-3 shadow-[var(--shadow-card)]">
-            <img src={portraitAsset.url} alt="Carolene Prem Leela Raja Singh" className="aspect-[4/5] w-full object-cover object-[center_24%]" />
+            <img src={portraitImage} alt="Carolene Raja Singh" className="aspect-[4/5] w-full object-cover object-[center_24%]" />
             <figcaption className="flex justify-between border-t border-border px-1 pt-3 font-mono text-[10px] uppercase text-muted-foreground">
               <span>Technical Team Lead</span><span>Madurai, India</span>
             </figcaption>
@@ -31,7 +31,7 @@ const Hero = () => {
             <span>Portfolio</span><span className="h-px w-10 bg-gold" /><span>2026</span>
           </div>
           <h1 className="max-w-3xl font-display text-6xl font-normal leading-[0.92] text-foreground sm:text-7xl lg:text-[6.6rem]">
-            Carolene Prem <em className="font-normal text-burgundy">Leela</em>
+            Carolene <em className="font-normal text-burgundy">Raja Singh</em>
           </h1>
           <p className="mt-7 max-w-2xl border-l border-gold pl-5 text-xl leading-snug text-primary md:text-2xl">
             Technical Team Lead · Full-Stack & Embedded Systems Engineer

@@ -23,7 +23,7 @@ const Index = () => {
       
       <footer className="border-t border-border px-6 py-8">
         <p className="container mx-auto max-w-7xl font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
-          © {new Date().getFullYear()} Carolene Prem Leela Raja Singh. All rights reserved.
+          © {new Date().getFullYear()} Carolene Raja Singh. All rights reserved.
         </p>
       </footer>
     </div>
