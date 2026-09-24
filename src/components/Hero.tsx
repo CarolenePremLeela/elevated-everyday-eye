@@ -89,6 +89,7 @@ const Hero = () => {
               <Linkedin className="w-6 h-6" />
             </a>
           </div>
+        </div>
       </div>
     </section>
   );
